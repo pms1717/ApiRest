@@ -12,6 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "precios")
 public class Precio {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "brand_id")
     private Long brandId;
@@ -25,9 +30,8 @@ public class Precio {
     @Column(name = "price_list")
     private Integer priceList;
     
-    @Id
     @Column(name = "product_id")
-    private Long id;
+    private Long product_id;
     
     @Column(name = "priority")
     private Integer priority;
@@ -37,121 +41,79 @@ public class Precio {
     
     @Column(name = "curr")
     private String curr;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getBrandId() {
+		return brandId;
+	}
+
+	public void setBrandId(Long brandId) {
+		this.brandId = brandId;
+	}
+
+	public Timestamp getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Timestamp startDate) {
+		this.startDate = startDate;
+	}
+
+	public Timestamp getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Timestamp endDate) {
+		this.endDate = endDate;
+	}
+
+	public Integer getPriceList() {
+		return priceList;
+	}
+
+	public void setPriceList(Integer priceList) {
+		this.priceList = priceList;
+	}
+
+	public Long getProduct_id() {
+		return product_id;
+	}
+
+	public void setProduct_id(Long product_id) {
+		this.product_id = product_id;
+	}
+
+	public Integer getPriority() {
+		return priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getCurr() {
+		return curr;
+	}
+
+	public void setCurr(String curr) {
+		this.curr = curr;
+	}
     
- 
-    
-
-    /**
-     * @return the id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the startDate
-     */
-    public Timestamp getStartDate() {
-        return startDate;
-    }
-
-    /**
-     * @param startDate the startDate to set
-     */
-    public void setStartDate(Timestamp startDate) {
-        this.startDate = startDate;
-    }
-
-    /**
-     * @return the endDate
-     */
-    public Timestamp getEndDate() {
-        return endDate;
-    }
-
-    /**
-     * @param endDate the endDate to set
-     */
-    public void setEndDate(Timestamp endDate) {
-        this.endDate = endDate;
-    }
-
-    /**
-     * @return the priceList
-     */
-    public Integer getPriceList() {
-        return priceList;
-    }
-
-    /**
-     * @param priceList the priceList to set
-     */
-    public void setPriceList(Integer priceList) {
-        this.priceList = priceList;
-    }
-
-    /**
-     * @return the priority
-     */
-    public Integer getPriority() {
-        return priority;
-    }
-
-    /**
-     * @param priority the priority to set
-     */
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
-    /**
-     * @return the price
-     */
-    public Double getPrice() {
-        return price;
-    }
-
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    /**
-     * @return the curr
-     */
-    public String getCurr() {
-        return curr;
-    }
-
-    /**
-     * @param curr the curr to set
-     */
-    public void setCurr(String curr) {
-        this.curr = curr;
-    }
-
-    /**
-     * @return the brandId
-     */
-    public Long getBrandId() {
-        return brandId;
-    }
-
-    /**
-     * @param brandId the brandId to set
-     */
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
-    }
     
     
     
