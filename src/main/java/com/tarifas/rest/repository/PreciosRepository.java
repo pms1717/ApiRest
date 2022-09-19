@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.tarifas.rest.model.Precio;
+import com.tarifas.rest.entity.Precio;
 
 @Repository
 public interface PreciosRepository extends JpaRepository<Precio, Long> {

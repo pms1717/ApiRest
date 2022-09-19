@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tarifas.rest.model.Precio;
+import com.tarifas.rest.entity.Precio;
+import com.tarifas.rest.model.PrecioDTO;
 import com.tarifas.rest.service.PreciosService;
 
 @RestController
@@ -32,24 +33,32 @@ public class PreciosController {
 //    }
     
     @GetMapping("/findAll")
-    public ResponseEntity<List<Precio>> obtenerTarifa(){
+    public ResponseEntity<List<PrecioDTO>> obtenerTarifa(){
         return new ResponseEntity<>(preciosService.findAll(), HttpStatus.OK);
     }
     
-    @GetMapping("/findID")
-    public ResponseEntity<List<Precio>> obtenerPrecio(){
-        return new ResponseEntity<>(preciosService.findId(), HttpStatus.OK);
-    }
+//    @GetMapping("/findID")
+//    public ResponseEntity<List<Precio>> obtenerPrecio(){
+//        return new ResponseEntity<>(preciosService.findId(), HttpStatus.OK);
+//    }
     
-    @GetMapping("/obtenerPrecio")
-    public ResponseEntity<List<Precio>> obtenerPrecio(@RequestParam(value = "fechaAplicacion") Timestamp period,
+    /**
+ * Obtener precio.
+ *
+ * @param period the period
+ * @param idProducto the id producto
+ * @param idCadena the id cadena
+ * @return the response entity
+ */
+@GetMapping("/obtenerPrecio")
+    public ResponseEntity<PrecioDTO> obtenerPrecio(@RequestParam(value = "fechaAplicacion") Timestamp period,
     		@RequestParam(value = "idProducto") Integer idProducto, @RequestParam(value = "idCadena") Integer idCadena){
         return new ResponseEntity<>(preciosService.obtenerPrecioPorFechaCadenaYProducto(period,idProducto,idCadena), HttpStatus.OK);
     }
     
     
-    @GetMapping("/findPrecio")
-    public ResponseEntity<List<Precio>> obtenerPrecio2(){
-        return new ResponseEntity<>(preciosService.findPrecio(), HttpStatus.OK);
-    }
+//    @GetMapping("/findPrecio")
+//    public ResponseEntity<List<Precio>> obtenerPrecio2(){
+//        return new ResponseEntity<>(preciosService.findPrecio(), HttpStatus.OK);
+//    }
 }

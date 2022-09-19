@@ -1,4 +1,4 @@
-package com.tarifas.rest.model;
+package com.tarifas.rest.entity;
 
 import java.sql.Timestamp;
 
@@ -82,11 +82,11 @@ public class Precio {
 		this.priceList = priceList;
 	}
 
-	public Integer getProduct_id() {
+	public Integer getProductId() {
 		return productId;
 	}
 
-	public void setProduct_id(Integer productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 
