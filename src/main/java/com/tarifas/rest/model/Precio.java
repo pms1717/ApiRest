@@ -31,7 +31,7 @@ public class Precio {
     private Integer priceList;
     
     @Column(name = "product_id")
-    private Long productId;
+    private Integer productId;
     
     @Column(name = "priority")
     private Integer priority;
@@ -82,11 +82,11 @@ public class Precio {
 		this.priceList = priceList;
 	}
 
-	public Long getProduct_id() {
+	public Integer getProduct_id() {
 		return productId;
 	}
 
-	public void setProduct_id(Long productId) {
+	public void setProduct_id(Integer productId) {
 		this.productId = productId;
 	}
 

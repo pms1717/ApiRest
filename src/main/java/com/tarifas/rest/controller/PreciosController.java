@@ -44,7 +44,7 @@ public class PreciosController {
     @GetMapping("/obtenerPrecio")
     public ResponseEntity<List<Precio>> obtenerPrecio(@RequestParam(value = "fechaAplicacion") Timestamp period,
     		@RequestParam(value = "idProducto") Integer idProducto, @RequestParam(value = "idCadena") Integer idCadena){
-        return new ResponseEntity<>(preciosService.findId(), HttpStatus.OK);
+        return new ResponseEntity<>(preciosService.obtenerPrecioPorFechaCadenaYProducto(period,idProducto,idCadena), HttpStatus.OK);
     }
     
     

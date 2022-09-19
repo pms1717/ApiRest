@@ -31,7 +31,7 @@ public class PreciosServiceImpl implements PreciosService{
     	// > 2012-09-15 18:47:52
     	//Timestamp timestamp = java.sql.Timestamp.valueOf("2020-06-14 18:00:00");  
     	
-    	//List<Precio> result = precioRepository.findPrecioPoridddd(timestamp);
+    	List<Precio> result = precioRepository.findPrecioPorFechaProductoCadena(period, idProducto, idCadena);
     	
     	return result;
     }

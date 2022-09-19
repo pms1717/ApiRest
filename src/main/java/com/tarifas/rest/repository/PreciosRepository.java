@@ -27,6 +27,6 @@ public interface PreciosRepository extends JpaRepository<Precio, Long> {
 			+ "WHERE precio.startDate < :date "
 			+ "AND precio.endDate >= :date "
 			+ "AND precio.productId = :idProducto "
-			+ "AND precio.brandId")
+			+ "AND precio.brandId = :idCadena")
 	List<Precio> findPrecioPorFechaProductoCadena(Timestamp date, Integer idProducto, Integer idCadena);
 }
