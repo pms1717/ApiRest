@@ -1,4 +1,4 @@
-package com.tarifas.model;
+package com.tarifas.rest.model;
 
 import java.sql.Timestamp;
 
@@ -19,7 +19,7 @@ public class Precio {
     private Long id;
 
     @Column(name = "brand_id")
-    private Long brandId;
+    private Integer brandId;
     
     @Column(name = "start_date")
     private Timestamp startDate;
@@ -31,7 +31,7 @@ public class Precio {
     private Integer priceList;
     
     @Column(name = "product_id")
-    private Long product_id;
+    private Long productId;
     
     @Column(name = "priority")
     private Integer priority;
@@ -50,11 +50,11 @@ public class Precio {
 		this.id = id;
 	}
 
-	public Long getBrandId() {
+	public Integer getBrandId() {
 		return brandId;
 	}
 
-	public void setBrandId(Long brandId) {
+	public void setBrandId(Integer brandId) {
 		this.brandId = brandId;
 	}
 
@@ -83,11 +83,11 @@ public class Precio {
 	}
 
 	public Long getProduct_id() {
-		return product_id;
+		return productId;
 	}
 
-	public void setProduct_id(Long product_id) {
-		this.product_id = product_id;
+	public void setProduct_id(Long productId) {
+		this.productId = productId;
 	}
 
 	public Integer getPriority() {
