@@ -22,19 +22,6 @@ public class PreciosServiceImpl implements PreciosService{
     @Autowired
     private PreciosRepository precioRepository;
     
-    public List<PrecioDTO> findAll(){
-    	List<Precio> result = precioRepository.findAll();
-    	
-    	List<PrecioDTO> resDTO = new ArrayList<PrecioDTO>(0);
-
-    	for(Precio p : result) {
-    		resDTO.add(new PrecioDTO(p));
-    	}
-    	
-        return resDTO;
-    }
-    
- 
     
     /**
      * Obtener precio por fecha cadena Y producto.
@@ -44,8 +31,7 @@ public class PreciosServiceImpl implements PreciosService{
      * @param idCadena the id cadena
      * @return the precio DTO
      */
-    public PrecioDTO obtenerPrecioPorFechaCadenaYProducto(Timestamp period, Integer idProducto, Integer idCadena){
-    	//Timestamp timestamp = java.sql.Timestamp.valueOf("2020-06-14 18:00:00");  
+    public PrecioDTO obtenerPrecioPorFechaCadenaYProducto(Timestamp period, Integer idProducto, Integer idCadena){ 
     	
     	List<Precio> result = precioRepository.findPrecioPorFechaProductoCadena(period, idProducto, idCadena);
     	
@@ -73,13 +59,5 @@ public class PreciosServiceImpl implements PreciosService{
     	return precio;
     }
     
-    
-    public List<Precio> findPrecio(){
-    	// > 2012-09-15 18:47:52
-    	Timestamp timestamp = java.sql.Timestamp.valueOf("2020-06-14 18:00:00");  
-    	
-    	List<Precio> result = precioRepository.findPrecioPoridddd(timestamp);
-    	
-    	return result;
-    }
+
 }

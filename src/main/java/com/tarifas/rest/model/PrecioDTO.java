@@ -7,6 +7,9 @@ import com.tarifas.rest.entity.Precio;
 
 public class PrecioDTO {
 
+	@JsonIgnore
+	private Long id;
+	
     private Integer brandId;
     
     private Timestamp startDate;
@@ -22,12 +25,24 @@ public class PrecioDTO {
 
 	public PrecioDTO(Precio p) {
 		super();
+		this.id = p.getId();
 		this.brandId = p.getBrandId();
 		this.startDate = p.getStartDate();
 		this.endDate = p.getEndDate();
 		this.productId = p.getProductId();
 		this.price = p.getPrice();
 		this.priority = p.getPriority();
+	}
+
+	public PrecioDTO() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Integer getBrandId() {

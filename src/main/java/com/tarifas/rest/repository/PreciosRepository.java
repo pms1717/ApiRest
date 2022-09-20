@@ -11,18 +11,15 @@ import com.tarifas.rest.entity.Precio;
 
 @Repository
 public interface PreciosRepository extends JpaRepository<Precio, Long> {
-
-	@Query("SELECT precio FROM Precio precio "
-			+ "WHERE precio.productId= ?1")
 	
-	List<Precio> findPrecioPorid(Long id);
-	
-	
-	@Query("SELECT precio FROM Precio precio "
-			+ "WHERE precio.startDate < ?1 "
-			+ "AND precio.endDate >= ?1")
-	List<Precio> findPrecioPoridddd(Timestamp date);
-	
+	/**
+	 * Find precio por fecha producto cadena.
+	 *
+	 * @param date the date
+	 * @param idProducto the id producto
+	 * @param idCadena the id cadena
+	 * @return the list
+	 */
 	@Query("SELECT precio FROM Precio precio "
 			+ "WHERE precio.startDate < :date "
 			+ "AND precio.endDate >= :date "

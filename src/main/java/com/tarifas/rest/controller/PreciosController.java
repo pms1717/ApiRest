@@ -25,25 +25,9 @@ public class PreciosController {
     private PreciosService preciosService;
     
     
-//    @GetMapping("/findAll")
-//    public ResponseEntity<List<Precio>> obtenerTarifa(@RequestParam @DateTimeFormat(pattern = "dd/MM/yyyy") final Date fechaAplicacion,
-//            @RequestParam final Integer idProducto, @RequestParam final Integer idCadena){
-//
-//        return new ResponseEntity<>(preciosService.findAll(), HttpStatus.OK);
-//    }
-    
-    @GetMapping("/findAll")
-    public ResponseEntity<List<PrecioDTO>> obtenerTarifa(){
-        return new ResponseEntity<>(preciosService.findAll(), HttpStatus.OK);
-    }
-    
-//    @GetMapping("/findID")
-//    public ResponseEntity<List<Precio>> obtenerPrecio(){
-//        return new ResponseEntity<>(preciosService.findId(), HttpStatus.OK);
-//    }
-    
     /**
- * Obtener precio.
+ * 
+ * Obtiene el precio de un producto según su fecha de aplicación, identificador de producto e identificador de cadena
  *
  * @param period the period
  * @param idProducto the id producto
@@ -51,14 +35,9 @@ public class PreciosController {
  * @return the response entity
  */
 @GetMapping("/obtenerPrecio")
-    public ResponseEntity<PrecioDTO> obtenerPrecio(@RequestParam(value = "fechaAplicacion") Timestamp period,
+    public ResponseEntity<PrecioDTO> obtenerPrecio(@RequestParam(value = "fechaAplicacion") Timestamp fechaAplicacion,
     		@RequestParam(value = "idProducto") Integer idProducto, @RequestParam(value = "idCadena") Integer idCadena){
-        return new ResponseEntity<>(preciosService.obtenerPrecioPorFechaCadenaYProducto(period,idProducto,idCadena), HttpStatus.OK);
+        return new ResponseEntity<>(preciosService.obtenerPrecioPorFechaCadenaYProducto(fechaAplicacion,idProducto,idCadena), HttpStatus.OK);
     }
     
-    
-//    @GetMapping("/findPrecio")
-//    public ResponseEntity<List<Precio>> obtenerPrecio2(){
-//        return new ResponseEntity<>(preciosService.findPrecio(), HttpStatus.OK);
-//    }
 }

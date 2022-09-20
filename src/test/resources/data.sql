@@ -1,15 +1,3 @@
-CREATE TABLE IF NOT EXISTS precios (  
-	id INT AUTO_INCREMENT  PRIMARY KEY,  
-	brand_id INT NOT NULL, 
-	start_date TIMESTAMP NOT NULL,
-	end_date TIMESTAMP NOT NULL,
-	price_list INT NOT NULL,
-	product_id INT NOT NULL,
-	priority  INT NOT NULL,
-	price   DECIMAL(7,2) NOT NULL,
-	curr	VARCHAR(3)  NOT NULL
-); 
-
 insert into precios (brand_id,start_date,end_date,price_list, product_id,priority,price,curr)
 values(1, '2020-06-14 00:00:00','2020-12-31 23:59:59', 1, 35455,0,35.50,'EUR');
 

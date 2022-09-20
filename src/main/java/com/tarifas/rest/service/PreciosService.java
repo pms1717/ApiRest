@@ -2,13 +2,12 @@ package com.tarifas.rest.service;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Optional;
 
 import com.tarifas.rest.entity.Precio;
 import com.tarifas.rest.model.PrecioDTO;
 
 public interface PreciosService {
-
-    public List<PrecioDTO> findAll();
 
 	/**
 	 * Obtener precio por fecha cadena Y producto.
