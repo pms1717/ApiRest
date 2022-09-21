@@ -2,13 +2,11 @@ package com.tarifas.rest.integration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.jdbc.datasource.init.ScriptException;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.tarifas.rest.model.PrecioDTO;
@@ -128,22 +126,4 @@ public class PreciosIntegrationTest extends BaseIntegrationTest{
 	}
 	
 	
-	@Test
-	public void obtenerPrecio() throws ScriptException, SQLException {
-		
-		  String url = "http://localhost:" + port;
-	      String testUrl = url + "/precios/findId";
-	       
-	      Integer idProducto = 1;
-	    		  
-	      UriComponentsBuilder ucb = UriComponentsBuilder.fromHttpUrl(testUrl)
-	                .queryParam("idProducto", idProducto);
-	      
-	      final ResponseEntity<PrecioDTO> response = 
-	    		   this.restTemplate.getForEntity(ucb.toUriString(), PrecioDTO.class);
-	      
-	      assertEquals(HttpStatus.OK, response.getStatusCode());
-	      
-	      
-	}
 }
